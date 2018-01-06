@@ -1,9 +1,53 @@
 <?php
 if(isset($_POST["Temperature"]))
 {//if there is data show it
+    //test output
     echo $_POST["Temperature"];
     echo '<br />';
     echo $_POST["Type"];
+    $fromType = $_POST["Type"];
+    switch ($fromType)
+    {//determines the type of temperature being calculated
+        case "celcius":
+            switch ($toType)
+            {
+                case "celcius":
+                    //add equation;
+                    break;
+                case "fahrenheit":
+                    //add equation;
+                    break;
+                case "kelvin":
+                    //add equation;
+                    break;
+            }
+        case "fahrenheit":
+            switch ($toType)
+            {
+                case "celcius":
+                    //add equation;
+                    break;
+                case "fahrenheit":
+                    //add equation;
+                    break;
+                case "kelvin":
+                    //add equation;
+                    break;
+            }
+        case "kelvin":
+            switch ($toType)
+            {
+                case "celcius":
+                    //add equation;
+                    break;
+                case "fahrenheit":
+                    //add equation;
+                    break;
+                case "kelvin":
+                    //add equation;
+                    break;
+            }
+    }
 }else{//show form
     echo '
     <form action="" method="post">
@@ -20,7 +64,7 @@ if(isset($_POST["Temperature"]))
         </lable>
     <br />
     <lable>
-        What type of temperature:
+        From:
         </lable>
         <br />
         
@@ -41,6 +85,30 @@ if(isset($_POST["Temperature"]))
     <input 
         type="radio" 
         name="Type"
+        value="kelvin" />
+        <lable>Kelvin</lable>
+        <br />
+        To :
+        </lable>
+        <br />
+    <lable>    
+    <input 
+        type="radio"
+        name="fromType"
+        value="celcius" />
+        <lable>Celcius</lable>
+        <br />
+
+    <input 
+        type="radio" 
+        name="fromType"
+        value="fahrenheit" />
+        <lable>Fahrenheit</lable>
+        <br />
+
+    <input 
+        type="radio" 
+        name="fromType"
         value="kelvin" />
         <lable>Kelvin</lable>
         <br />
