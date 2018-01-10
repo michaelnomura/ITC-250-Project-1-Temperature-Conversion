@@ -135,3 +135,48 @@ if(isset($_POST["Temperature"]))
     </form>
     ';
 }
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Temperature Conversion</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link id="stylesheet" rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <form method="post" action ="index.php">
+    Enter a temperature <input type ="number" name="TempDegree" /><br />
+    <select name="Temp1">
+        <option value="f">Fahrenheit</option>
+        <option value="c">Celsius</option>
+        <option value="k">Kelvin</option>
+    </select>
+    <p>to</p>
+    <select name="Temp2">
+        <option value="f">Fahrenheit</option>
+        <option value="c">Celsius</option>
+        <option value="k">Kelvin</option>
+    </select>
+    <br>
+    <input type ="submit" value="Convert" /><br />
+    </form>
+
+</body>
+
+
+
+<footer>
+   <small>
+   &copy; 2018, All Rights Reserved  
+       <br />
+   <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML</a>
+    <br />
+   <a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
+   </small> 
+
+</footer>
+</html>
