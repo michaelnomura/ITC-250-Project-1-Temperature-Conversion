@@ -1,17 +1,34 @@
 <?php
+
+require_once "Temperature.php";
+
+
 if(isset($_POST["Temperature"]))
 {//if there is data show it
     //test output
     echo $_POST["Temperature"];
+	$fromTemperature = $_POST["Temperature"];
     echo '<br />';
+
     echo $_POST["Type"];
     $fromType = $_POST["Type"];
-    switch ($fromType)
+    echo '<br />';
+    echo '<br />';
+
+	$temperature = new Temperature($fromType, $fromTemperature);
+	echo '<pre>';
+	printf("%8.2f  Kelvin<br />", $temperature->getKelvin());
+	printf("%8.2f° Celsius<br />", $temperature->getCelsius());
+	printf("%8.2f° Fahrenheit<br />", $temperature->getFahrenheit());
+	echo '</pre>';
+
+	
+/*    switch ($fromType)
     {//determines the type of temperature being calculated
-        case "celcius":
+        case "celsius":
             switch ($toType)
             {
-                case "celcius":
+                case "celsius":
                     //add equation;
                     break;
                 case "fahrenheit":
@@ -24,7 +41,7 @@ if(isset($_POST["Temperature"]))
         case "fahrenheit":
             switch ($toType)
             {
-                case "celcius":
+                case "celsius":
                     //add equation;
                     break;
                 case "fahrenheit":
@@ -37,7 +54,7 @@ if(isset($_POST["Temperature"]))
         case "kelvin":
             switch ($toType)
             {
-                case "celcius":
+                case "celsius":
                     //add equation;
                     break;
                 case "fahrenheit":
@@ -48,10 +65,11 @@ if(isset($_POST["Temperature"]))
                     break;
             }
     }
+*/
 }else{//show form
     echo '
     <form action="" method="post">
-    <lable>
+    <label>
         Temperature:
     <br />
     <input
@@ -61,56 +79,56 @@ if(isset($_POST["Temperature"]))
         required="required"
         tabindex="10"
         title="Temperature is required" />
-        </lable>
+        </label>
     <br />
-    <lable>
+    <label>
         From:
-        </lable>
+        </label>
         <br />
         
     <input 
         type="radio"
         name="Type"
-        value="celcius" />
-        <lable>Celcius</lable>
+        value="celsius" />
+        <label>Celsius</label>
         <br />
 
     <input 
         type="radio" 
         name="Type"
         value="fahrenheit" />
-        <lable>Fahrenheit</lable>
+        <label>Fahrenheit</label>
         <br />
 
     <input 
         type="radio" 
         name="Type"
         value="kelvin" />
-        <lable>Kelvin</lable>
+        <label>Kelvin</label>
         <br />
         To :
-        </lable>
+        </label>
         <br />
-    <lable>    
+    <label>    
     <input 
         type="radio"
         name="fromType"
-        value="celcius" />
-        <lable>Celcius</lable>
+        value="celsius" />
+        <label>Celsius</label>
         <br />
 
     <input 
         type="radio" 
         name="fromType"
         value="fahrenheit" />
-        <lable>Fahrenheit</lable>
+        <label>Fahrenheit</label>
         <br />
 
     <input 
         type="radio" 
         name="fromType"
         value="kelvin" />
-        <lable>Kelvin</lable>
+        <label>Kelvin</label>
         <br />
     
     <input type="submit" />
