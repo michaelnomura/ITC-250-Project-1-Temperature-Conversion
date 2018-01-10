@@ -41,4 +41,3 @@
 			return (self::getCelsius() / self::FtoC_Factor) + self::FtoC_Difference;
 		}
 	}
-?>
