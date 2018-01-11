@@ -22,18 +22,14 @@
 
 		function setTemperature($unit, $value)
 		{
-			//  Note that breaks were intentionally omitted from this switch block.
-			//  This allows Fahrenheit to be converted to Celsius before that
-			//  is converted to Kelvin, which in turn enables redundancy in the
-			//  formulae to be avoided.
-			switch ($unit) {
-				case "fahrenheit":  //  Convert Fahrenheit to Celsius
+			switch($unit) {
+				case "Fahrenheit":  //  Convert Fahrenheit to Celsius
 					$value = (($value - self::F_C_DIFFERENCE) * self::F_C_FACTOR);
 					//  no break
-				case "celsius":  //  Convert Celsius to Kelvin
+				case "Celsius":  //  Convert Celsius to Kelvin
 					$value = $value + self::C_K_DIFFERENCE;
 					//  no break
-				case "kelvin":  //  Store Kelvin
+				case "Kelvin":  //  Store Kelvin
 					$this->kelvin = $value;
 					break;
 			}
