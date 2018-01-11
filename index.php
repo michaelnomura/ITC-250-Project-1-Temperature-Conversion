@@ -164,4 +164,3 @@ if(isset($_POST["Temperature"]))
     </form>
     ';
 }
-
