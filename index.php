@@ -1,7 +1,5 @@
 <?php
-//index.php
 require_once "Temperature.php";
-
 
 if(isset($_POST["Temperature"])){ //if there is data show it
 	
@@ -9,16 +7,14 @@ if(isset($_POST["Temperature"])){ //if there is data show it
     	echo '<b>*Please enter a temperature and select desired conversion types below*</b><br />';
         echo '<br />';
         
-    }else{
+    } else {
         $fromTemperature = $_POST["Temperature"];
         $toType = $_POST["toType"];
         $fromType = $_POST["fromType"];
 
-        //echo '<br />';
-
         $temperature = new Temperature($fromType, $fromTemperature);
 
-        echo '<pre>';  //  Preserve whitespace in the HTML that follows (optional).
+        echo '<pre>';  // Preserve whitespace in the HTML that follows (optional).
 
         echo $fromTemperature . ' ' . ($fromType == 'Kelvin' ? '' : 'degrees ') . $fromType . ' = ';
 
@@ -33,113 +29,54 @@ if(isset($_POST["Temperature"])){ //if there is data show it
                 printf("%.2f °Fahrenheit<br />", $temperature->getFahrenheit());
                 break;      		
         }
-
         echo '</pre>';  //  Stop preserving whitespace.
     }
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>Temperature Conversion</title>
-    <meta name="robots" content="noindex,nofollow" />
-    <link id="stylesheet" rel="stylesheet" href="css/styles.css" />
-</head>
-<body>
-    <form action="" method="post">
-    <label>
-    Temperature: <br />
-    <input
-        type="number" 
-        name="Temperature" 
-        placeholder="Put temperature here" 
-        required="required" 
-        size="30"
-        maxlength="60" 
-        autofocus
-        title="Temperature is required" 
-        tabindex="10" 
-        />
-    </label>
-    
-    <br />
-    
-    <label>From:</label>
-    
-	<br /> 
-    
-    <input 
-        type="radio" 
-        name="fromType" 
-        value="Celsius" />
-	<label>Celsius</label>
-    
-	<br />
-
-    <input 
-        type="radio" 
-        name="fromType" 
-        value="Fahrenheit" />
-	<label>Fahrenheit</label>
-    
-	<br />
-
-    <input 
-        type="radio" 
-        name="fromType" 
-        value="Kelvin" />
-	<label>Kelvin</label>
-    
-	<br />
-
-    <label>
-    To:
-	</label>
-	<br />
-
-       
-    <input 
-        type="radio" 
-        name="toType" 
-        value="Celsius" />
-    <label>Celsius</label>
-    <br />
-
-    <input 
-        type="radio" 
-        name="toType" 
-        value="Fahrenheit" />
-	<label>Fahrenheit</label>
-	<br />
-
-    <input 
-        type="radio" 
-        name="toType" 
-        value="Kelvin" />
-	<label>Kelvin</label>
-	<br />
-    
-    <input type="submit" />
-    </form>
-</body>
-
-
-
-<footer>
-   <small>
-   &copy; 2018, All Rights Reserved  
-       <br />
-   <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML</a>
-    <br />
-   <a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
-   </small> 
-
-</footer>
+    <head>
+        <title> Temperature Conversion </title>
+        <link id="stylesheet" rel="stylesheet" href="css/styles.css">
+        <meta charset="utf-8">
+        <meta name="robots" content="noindex,nofollow">
+    </head>
+    <body>
+        <h1> Temperature Converter </h1>
+        
+        <form action="" method="post">
+            Temperature:
+            <input type="number" name="Temperature" placeholder="enter temperature" title="Temperature is required." size="30" tabindex="10" required="required" autofocus/>
+            <br>
+            <p> From: </p>
+            <br>
+            <input type="radio" name="fromType" id="celsius1" value="Celsius">
+            <label for="celsius1"> Celsius (&deg;C) </label>
+            <br>
+            <input type="radio" name="fromType" id="fahrenheit1" value="Fahrenheit">
+            <label for="fahrenheit1"> Fahrenheit (&deg;F) </label>
+            <br>
+            <input type="radio" name="fromType" id="kelvin1" value="Kelvin">
+            <label for="kelvin1"> Kelvin (K) </label>
+            <br>
+            <p> To: </p>
+            <br>
+            <input type="radio" name="toType" id="celsius2" value="Celsius">
+            <label for="celsius2"> Celsius (&deg;C) </label>
+            <br>
+            <input type="radio" name="toType" id="fahrenheit2" value="Fahrenheit">
+            <label for="fahrenheit2"> Fahrenheit (&deg;F) </label>
+            <br>
+            <input type="radio" name="toType" id="kelvin2" value="Kelvin">
+            <label for="kelvin2"> Kelvin (K) </label>
+            <br>
+            <input type="submit" value="CONVERT">
+        </form>
+        <footer>
+            <small> Copyright &copy; 2018. All rights reserved.
+                <br> <a href="http://validator.w3.org/check/referer" target="_blank"> valid HTML</a> | <a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank"> valid CSS </a>
+            </small>
+        </footer>
+    </body>
 </html>
-
-
-
-
