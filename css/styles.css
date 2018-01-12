@@ -41,7 +41,7 @@ input[type=submit]:hover {
 
 a:link {
     text-decoration: none;
-    color: darkblue;
+    color: #00008B;
 }
 
 a:visited {
