@@ -4,8 +4,8 @@ require_once "Temperature.php";
 if(isset($_POST["Temperature"])){ //if there is data show it
 	
   	if(!isset($_POST["toType"]) || !isset($_POST["fromType"])){
-    	echo '<b>*Please enter a temperature and select desired conversion types below*</b><br />';
-        echo '<br />';
+    	echo '<strong> Please enter a temperature and select desired conversion type. </strong><br>';
+        echo '<br>';
         
     } else {
         $fromTemperature = $_POST["Temperature"];
