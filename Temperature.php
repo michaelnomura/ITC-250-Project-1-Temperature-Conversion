@@ -9,9 +9,9 @@
         //  Magic number constants are defined here to avoid any redundancy
         //  in the code below.  Beware:  If these class constants are declared
         //  as private, the interpreter will crash in DreamHost.
-        const private F_C_DIFFERENCE = 32.0;
-        const private F_C_FACTOR      = 5.0 / 9.0;
-        const private C_K_DIFFERENCE = 273.15;
+        const F_C_DIFFERENCE = 32.0;
+        const F_C_FACTOR      = 5.0 / 9.0;
+        const C_K_DIFFERENCE = 273.15;
 
         
         
