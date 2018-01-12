@@ -38,8 +38,17 @@ if(isset($_POST["Temperature"])){ //if there is data show it
     }
 }
 
+?>
 
-  echo '
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Temperature Conversion</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link id="stylesheet" rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
     <form action="" method="post">
     <label>
     Temperature: <br />
@@ -91,7 +100,7 @@ if(isset($_POST["Temperature"])){ //if there is data show it
 	</label>
 	<br />
 
-    <label>    
+       
     <input 
         type="radio" 
         name="toType" 
@@ -115,5 +124,22 @@ if(isset($_POST["Temperature"])){ //if there is data show it
     
     <input type="submit" />
     </form>
-      ';
+</body>
+
+
+
+<footer>
+   <small>
+   &copy; 2018, All Rights Reserved  
+       <br />
+   <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML</a>
+    <br />
+   <a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
+   </small> 
+
+</footer>
+</html>
+
+
+
 
