@@ -16,17 +16,17 @@ if(isset($_POST["Temperature"])){ //if there is data show it
 
         echo '<pre>';  // Preserve whitespace in the HTML that follows (optional).
 
-        echo $fromTemperature . ' ' . ($fromType == 'Kelvin' ? '' : 'degrees ') . $fromType . ' = ';
+        echo $fromTemperature . ' ' . ($fromType == 'Kelvin' ? '' : '') . $fromType . ' = ';
 
         switch($toType){
             case "Kelvin":
-                printf("%.2f Kelvin<br />", $temperature->getKelvin());
+                printf("%.2f Kelvin<br>", $temperature->getKelvin());
                 break;
             case "Celsius":
-                printf("%.2f °Celsius<br />", $temperature->getCelsius());
+                printf("%.2f °Celsius<br>", $temperature->getCelsius());
                 break;
             case "Fahrenheit":
-                printf("%.2f °Fahrenheit<br />", $temperature->getFahrenheit());
+                printf("%.2f °Fahrenheit<br>", $temperature->getFahrenheit());
                 break;      		
         }
         echo '</pre>';  //  Stop preserving whitespace.
